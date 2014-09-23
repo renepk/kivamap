@@ -141,9 +141,10 @@ jQuery(function($) {
             var borrowerLocation = ' data-borloc="' + recentLoans.lending_actions[i].loan.location.geo.pairs + '"';
             var borrowerCountry = ' data-borcntry="' + recentLoans.lending_actions[i].loan.location.country + '"';
             var borrowerImage = ' data-borimage="' + recentLoans.lending_actions[i].loan.image.id + '"';
-            var loanDesc = recentLoans.lending_actions[i].loan.use;
+            var loanAmt = recentLoans.lending_actions[i].loan.funded_amount;
+			var borrowerCount = recentLoans.lending_actions[i].loan.borrower_count;
             
-            $('#recentlist').append('<a class="loans"' + borrowerId + borrowerName + borrowerLocation + borrowerCountry + borrowerImage + lenderId + lenderName + lenderLocation + lenderImage + '><li><span>' + lenName + '</span> made a loan to <span>' + borName + '</span> ' + loanDesc + '</li></a>'); //use data- to send data to displayMap function
+            $('#recentlist').append('<a class="loans"' + borrowerId + borrowerName + borrowerLocation + borrowerCountry + borrowerImage + lenderId + lenderName + lenderLocation + lenderImage + '><li><span>' + lenName + '</span> made a loan to <span>' + borName + ' for a dollar sum of  ' + loanAmt + ' for '+borrowerCount+ ' borrowers</span>'+'</li></a>'); //use data- to send data to displayMap function
 
             listNum++;
             prevLender = lenderId;
